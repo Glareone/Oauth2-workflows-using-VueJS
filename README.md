@@ -57,8 +57,8 @@ Scheme:
 Scheme:
 
 ![OAuth2-credentials-grant](Credentials-Grant-flow.png)
-* Credentials Grant flow doesn't require to use /auth endpoint.
-* Client and Owner is the same in this flow. Uses CliendID and ClientSecret to get access token.
+* Credentials Grant flow doesn't require to use /auth endpoint
+* Client and Owner is the same in this flow. Uses CliendID and ClientSecret to get access token
 * Doesn't require a refresh token.
 * Ease explanation could be found here
 https://auth0.com/docs/flows/concepts/client-credentials
@@ -66,12 +66,18 @@ or here https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth
 
 </details>
 
-### Resource Owner Password Credentials Grant (Trust relationship client or device, operating system, highly privileged app)
+### Resource Owner Password Credentials Grant
+* Password anti-pattern
+* FOR Trust relationship client or device / operating system / highly privileged app only
+* Could be used in situations when Resource server and Official Client was produced by one organization: 
+dropbox official mobile app and dropbox resource server.
+* It obtains and uses username and password directly, but DOESN'T STORE IT (delete credentials immediately after getting token)
+
+Pros and Cons: Client doesn't guarantee that it will delete username and password after obtaining tokens (access and refresh)
 
 <details>
 <summary>Description of all steps: </summary>
 
-* It stores and uses username and password directly.
 * The authorization server should take special care when enabling this grant type and only allow it when other flows are not viable.
 * This grant type is suitable for clients capable of obtaining the resource owner’s credentials (username and password,
 typically using an interactive form). 
