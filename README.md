@@ -67,6 +67,10 @@ or here https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth
 </details>
 
 ### Resource Owner Password Credentials Grant
+
+<details>
+<summary>Description of all steps: </summary>
+
 * Password anti-pattern
 * FOR Trust relationship client or device / operating system / highly privileged app only
 * Could be used in situations when Resource server and Official Client was produced by one organization: 
@@ -75,8 +79,7 @@ dropbox official mobile app and dropbox resource server.
 
 Pros and Cons: Client doesn't guarantee that it will delete username and password after obtaining tokens (access and refresh)
 
-<details>
-<summary>Description of all steps: </summary>
+---
 
 * The authorization server should take special care when enabling this grant type and only allow it when other flows are not viable.
 * This grant type is suitable for clients capable of obtaining the resource owner’s credentials (username and password,
@@ -205,6 +208,103 @@ Resource Access:
 curl https://api.linkedin.com/v1/people/~ -H "Authorization: Bearer access_token"
 
 </details>
+
+### Paypal Client Credentials Grant Flow (uses only token endpoint) Information (Sandbox example):
+<details>
+
+<summary></summary>
+
+* Documentation:
+
+https://developer.paypal.com/docs/integration/direct/paypal-oauth2/
+
+https://developer.paypal.com/docs/integration/direct/make-your-first-call/
+
+also: playground: https://devtools-paypal.com/guide/pay_paypal
+
+---
+* Prerequisites:
+
+Paypal Account
+
+curl
+
+---
+* Client Registration:
+
+https://developer.paypal.com/developer/applications/create
+
+What you need from registration:
+
+clientId =
+
+clientSecret =
+
+* Token Endpoint:
+
+paypal uses client credentials
+```
+curl -ik https://api.sandbox.paypal.com/v1/oauth2/token \
+
+-H "Accept: application/json" \
+
+-H "Accept-Language: en_US" \
+
+-u “clientId:clientSecret" \
+
+-d "grant_type=client_credentials"
+```
+
+* What you need:
+
+access_token =
+
+Resource Access:
+```
+curl -v https://api.sandbox.paypal.com/v1/payments/payment \
+
+-H 'Content-Type: application/json' \
+
+-H 'Authorization: Bearer access_token' \
+
+-d '{
+"intent":"sale",
+
+"redirect_urls":{
+
+"return_url":"http://example.com/your_redirect_url.html",
+
+"cancel_url":"http://example.com/your_cancel_url.html"
+
+},
+
+"payer":{
+
+"payment_method":"paypal"
+
+},
+
+"transactions":[
+
+{
+
+"amount":{
+
+"total":"7.47",
+
+"currency":"USD"
+
+}
+
+}
+
+]
+
+}'
+```
+
+</details>
+
 
 ### OAuth for Android and Ios
 
