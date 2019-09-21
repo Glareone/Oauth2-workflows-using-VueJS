@@ -67,6 +67,10 @@ or here https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth
 </details>
 
 ### Resource Owner Password Credentials Grant
+
+<details>
+<summary>Description of all steps: </summary>
+
 * Password anti-pattern
 * FOR Trust relationship client or device / operating system / highly privileged app only
 * Could be used in situations when Resource server and Official Client was produced by one organization: 
@@ -75,8 +79,7 @@ dropbox official mobile app and dropbox resource server.
 
 Pros and Cons: Client doesn't guarantee that it will delete username and password after obtaining tokens (access and refresh)
 
-<details>
-<summary>Description of all steps: </summary>
+---
 
 * The authorization server should take special care when enabling this grant type and only allow it when other flows are not viable.
 * This grant type is suitable for clients capable of obtaining the resource owner’s credentials (username and password,
@@ -205,6 +208,156 @@ Resource Access:
 curl https://api.linkedin.com/v1/people/~ -H "Authorization: Bearer access_token"
 
 </details>
+
+### Google Implicit & Code Grant Flows Information:
+
+<details>
+<summary>OAuth Worksheet for Google: </summary>
+
+* Documentation:
+
+https://developers.google.com/accounts/docs/OAuth2
+
+https://developers.google.com/oauthplayground/
+
+---
+* Prerequisites:
+
+Google Account
+curl
+
+* Registration:
+
+https://console.developers.google.com
+
+* What you need from registration:
+
+redirectURI =
+URLENCODE(redirectURI) =
+clientId =
+clientSecret =
+
+---
+* Authorization Endpoint (Browser):
+
+https://accounts.google.com/o/oauth2/auth?redirect...URLENCODE(redirectURI)&response_type=code&client_id=clientId&scope=https%3A%2F%2Fmail.google.com%2F&approval_prompt=force
+
+* What you need:
+
+code =
+
+* Token Endpoint:
+
+curl -X POST -H "content-type: application/x-www-form-urlencoded" -d "grant_type=authorization_code&code=code&redirect_uri=URLENCODE(redirectURI)&client_id=clientId&client_secret=clientSecret" "https://accounts.google.com/o/oauth2/token"
+
+What you need:
+
+access_token =
+
+
+* Resource Access:
+
+curl -H "Authorization: Bearer access_token" "https://www.googleapis.com/gmail/v1/users/eMailAddress/messages"
+
+</details>
+
+### Paypal Client Credentials Grant Flow (uses only token endpoint) Information (Sandbox example):
+
+<details>
+
+<summary></summary>
+
+* Documentation:
+
+https://developer.paypal.com/docs/integration/direct/paypal-oauth2/
+
+https://developer.paypal.com/docs/integration/direct/make-your-first-call/
+
+also: playground: https://devtools-paypal.com/guide/pay_paypal
+
+---
+* Prerequisites:
+
+Paypal Account
+
+curl
+
+---
+* Client Registration:
+
+https://developer.paypal.com/developer/applications/create
+
+What you need from registration:
+
+clientId =
+
+clientSecret =
+
+* Token Endpoint:
+
+paypal uses client credentials
+```
+curl -ik https://api.sandbox.paypal.com/v1/oauth2/token \
+
+-H "Accept: application/json" \
+
+-H "Accept-Language: en_US" \
+
+-u “clientId:clientSecret" \
+
+-d "grant_type=client_credentials"
+```
+
+* What you need:
+
+access_token =
+
+Resource Access:
+```
+curl -v https://api.sandbox.paypal.com/v1/payments/payment \
+
+-H 'Content-Type: application/json' \
+
+-H 'Authorization: Bearer access_token' \
+
+-d '{
+"intent":"sale",
+
+"redirect_urls":{
+
+"return_url":"http://example.com/your_redirect_url.html",
+
+"cancel_url":"http://example.com/your_cancel_url.html"
+
+},
+
+"payer":{
+
+"payment_method":"paypal"
+
+},
+
+"transactions":[
+
+{
+
+"amount":{
+
+"total":"7.47",
+
+"currency":"USD"
+
+}
+
+}
+
+]
+
+}'
+```
+
+</details>
+
 
 ### OAuth for Android and Ios
 
@@ -365,3 +518,77 @@ iOS
 
 </details>
 
+### Redirect URL on Ionic
+
+<details>
+<summary>Q: What is the OAuth 2.0 redirect URL for the Ionic app to integrate LinkedIn and Google using the REST API?</summary>
+
+A:
+* Short answer:
+
+You define the redirect URI yourself, as a custom deeplink URL for your own app. It can have a customer scheme or it can
+ be a specific URL. An example of a redirect URI for mobile apps: myapp:///events/3/
+
+* Longer answer:
+
+How does the redirect work?
+
+This URL is sent back in the location header to the web browser on the mobile including the HTTP status code 301 for 
+redirect. The browser on the mobile now interprets the location header and resolves the address. MyApp needs to have a
+custom protocol handler installed on the device, so the browser redirects the request directly to the App on the same
+mobile device.
+
+---
+* How do I define a custom deeplink URL in Ionic?
+
+Deeplinking as a concept has evolved heavily over the last few years, with mobile devices going from supporting custom 
+URL schemes (like instagram://) to now opening native apps in response to navigation to URLs (like amazon.com).
+ Additionally, OS’s now support powerful ways to index and search data inside of native apps.
+
+To help Ionic developers deeplink more easily, we are excited to announce a new, official way to deeplink into both
+Ionic 1 and Ionic 2 apps (and non-ionic Cordova apps): the Ionic Deeplinks Plugin along with Ionic Native1.3.0.
+Let’s take a look at how it works:
+
+
+---
+* Choosing a Deeplink
+
+The first thing we need to do is figure out what kind of deeplink we want our app to respond to. Let’s say we run a Hat
+Shop and we have a website version of our store where we display our many fancy Hats. A URL to one of those Hats might
+look like https://myapp.com/events.
+
+We can actually launch our app when someone navigates to this URL on Android or iOS and display the app version of
+the Hat product page. Additionally, let’s say we want to enable a custom URL scheme of the form myapp://events.
+
+Now that we have our URL scheme, website, and deeplinking path decided, let’s install the Deeplinks Plugin.
+
+
+---
+* Installing Ionic Deeplinks
+
+The Ionic Deeplinks plugin requires some variables in order to get set up properly:
+
+cordova plugin add ionic-plugin-deeplinks --variable URL_SCHEME=myapp --variable DEEPLINK_SCHEME=https --variable DEEPLINK_HOST=myapp.com
+
+In the install command, we provide the custom URL scheme we want to handle (myapp), the host domain we will respond to
+(myapp.com) and the host protocol we will listen for, which 99% of the time will be httpsas it’s required on iOS and Android.
+
+We’re almost ready to handle deeplinks, we just need to configure Universal Links on iOS and App Links on Android 6.0
+so our app can open when navigating to ionic-hats.com.
+
+
+---
+* Configuring Universal Links (iOS) and App Links (Android)
+
+To configure iOS and Android, we need to enable Universal Links for iOS, and App Links for Android (6.0+). This process
+ is primarily done on the server side of your website. You’ll publish a specific json file for iOS and one for Android,
+  ensure your site is using HTTPS, and then configure your app to open in response to links to that domain.
+
+
+---
+* For Android, it pretty much just works from the plugin install above.
+
+However, for iOS, you’ll then enable the domain in the Associated Domains section of your entitlements, with the form
+applinks:yourdomain.com.
+
+</details>
