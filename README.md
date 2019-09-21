@@ -90,7 +90,7 @@ Scheme:
 
 </details>
 
-### Facebook code grant information
+### Facebook Code Grant Information
 <details>
 <summary>OAuth Worksheet for Facebook:</summary>
 
@@ -145,5 +145,63 @@ access_token =
 Resource Access:
 
 curl -H "Accept: application/json" -H "Authorization: Bearer access_token" "https://graph.facebook.com/me"
+
+</details>
+
+### LinkedIn Code Grant Information
+
+<details>
+
+
+
+<summary>OAuth Worksheet for LinkedIn: </summary>
+
+Documentation
+
+https://developer.linkedin.com/docs/oauth2
+---
+Prerequisites:
+
+LinkedIn Account
+curl
+
+Client Registration
+
+https://www.linkedin.com/developer/apps
+---
+What you need:
+
+redirectURI =
+URLENCODE(redirectURI) =
+clientId =
+clientSecret =
+
+---
+
+
+
+Authorization Endpoint (Browser)
+
+https://www.linkedin.com/uas/oauth2/authorization?...clientId&redirect_uri=URLENCODE(redirectURI)
+
+What you need:
+
+code =
+---
+
+
+Token Endpoint:
+
+curl -ik -X POST https://www.linkedin.com/uas/oauth2/accessToken -d grant_type=authorization_code -d code=code -d redirect_uri=URLENCODE(redirectURI) -d client_id=clientId -d client_secret=clientSecret
+
+What you need:
+
+access_token =
+---
+
+
+Resource Access:
+
+curl https://api.linkedin.com/v1/people/~ -H "Authorization: Bearer access_token"
 
 </details>
