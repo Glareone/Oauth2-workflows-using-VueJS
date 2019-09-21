@@ -89,3 +89,61 @@ Scheme:
 * Credentials Grant flow doesn't require to use /auth endpoint as same as Credentials Grant Flow.
 
 </details>
+
+### Facebook code grant information
+<details>
+<summary>OAuth Worksheet for Facebook:</summary>
+
+Documentation:
+
+https://developers.facebook.com/docs/facebook-login/manually-build-a-login-flow/#login
+
+Prerequisites:
+
+Facebook Account
+curl
+---
+
+
+
+Client Registration:
+https://developers.facebook.com/
+
+What you need:
+
+appId = clientId =
+appSecret = clientSecret =
+redirectURI =
+URLENCODE(redirectURI) =
+
+
+your redirect URI needs to have a slash in the end!
+
+---
+
+
+Authorization Endpoint (Browser):
+
+https://www.facebook.com/dialog/oauth?client_id=clientId&redirect_uri=URLENCODE(redirectURI)
+
+What you need:
+
+code =
+
+---
+
+Token Endpoint:
+
+non-standard: it is a GET instead of a POST
+curl -ik "https://graph.facebook.com/v2.4/oauth/access_token....URLENCODE(redirectURI)&client_id=clientId&client_secret=clientSecret&code=code"
+
+What you need:
+
+access_token =
+
+---
+Resource Access:
+
+curl -H "Accept: application/json" -H "Authorization: Bearer access_token" "https://graph.facebook.com/me"
+
+</details>
