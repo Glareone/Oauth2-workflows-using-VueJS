@@ -1,4 +1,4 @@
-import SelectionPanel from './components/SelectionPanel';
+import SelectionPanel from './components/SelectionPanel.vue';
 
 const GoogleForm = () => import(/* webpackChunkName: "user" */'./components/oauth-form-components/Google.vue');
 const FirebaseForm = () => import(/* webpackChunkName: "user" */'./components/oauth-form-components/Firebase.vue');
@@ -11,36 +11,38 @@ export const routes = [
     path: '/google',
     components: {
       default: SelectionPanel,
-      'route-form': GoogleForm
+      'route-form': GoogleForm,
     },
   },
   {
     path: '/firebase',
     components: {
       default: SelectionPanel,
-      'route-form': FirebaseForm
+      'route-form': FirebaseForm,
     },
   },
   {
     path: '/facebook',
     components: {
       default: SelectionPanel,
-      'route-form': FacebookForm
+      'route-form': FacebookForm,
     },
   },
   {
     path: '/linkedin',
     components: {
       default: SelectionPanel,
-      'route-form': LinkedInForm
+      'route-form': LinkedInForm,
     },
   },
   {
     path: '/paypal',
     components: {
       default: SelectionPanel,
-      'route-form': PaypalForm
+      'route-form': PaypalForm,
     },
   },
   { path: '*', redirect: '/google' },
 ];
+
+export default routes;
