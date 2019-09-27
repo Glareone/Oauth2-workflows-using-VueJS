@@ -3,27 +3,22 @@
     <div class="page">
       <app-header />
       <router-view />
-      <router-view name="route-form"/>
-      <app-information-block/>
-      <app-logging/>
+      <router-view name="route-form" />
+      <router-view name="route-information-block" />
+      <app-logging />
     </div>
   </div>
 </template>
 
 <script>
   import Header from './page-components/Header.vue';
-
-  import InformationBlock from './components/InformationBlock.vue';
   import Logging from './components/Logging.vue';
-  import SelectionPanel from './components/SelectionPanel.vue';
 
   export default {
     components: {
       appHeader: Header,
-      appInformationBlock: InformationBlock,
       appLogging: Logging,
-      appSelectionPanel: SelectionPanel,
-    }
+    },
   }
 </script>
 
