@@ -17,9 +17,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Firebase',
-  }
+export default {
+  name: 'Firebase',
+};
 </script>
 
 <style scoped>

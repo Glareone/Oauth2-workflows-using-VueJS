@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'GoogleOAuthInformation'
-  }
+export default {
+  name: 'GoogleOAuthInformation',
+};
 </script>
 
 <style scoped>

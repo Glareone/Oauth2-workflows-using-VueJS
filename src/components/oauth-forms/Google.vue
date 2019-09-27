@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Google',
-  }
+export default {
+  name: 'Google',
+};
 </script>
 
 <style scoped>

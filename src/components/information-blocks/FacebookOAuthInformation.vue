@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'FacebookOAuthInformation'
-  }
+export default {
+  name: 'FacebookOAuthInformation',
+};
 </script>
 
 <style scoped>

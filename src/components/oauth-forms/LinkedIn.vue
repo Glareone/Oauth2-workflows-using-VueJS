@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'LinkedIn',
-  }
+export default {
+  name: 'LinkedIn',
+};
 </script>
 
 <style scoped>

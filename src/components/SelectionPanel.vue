@@ -1,17 +1,25 @@
 <template>
   <div class="selection__container">
-    <router-link class="select-option" to="/google" tag="div" active-class="active" exact >Google</router-link>
-    <router-link class="select-option" to="/facebook" tag="div" active-class="active" exact >Facebook</router-link>
-    <router-link class="select-option" to="/paypal" tag="div" active-class="active" exact >Paypal</router-link>
-    <router-link class="select-option" to="/firebase" tag="div" active-class="active" exact >Firebase</router-link>
-    <router-link class="select-option" to="/linkedin" tag="div" active-class="active" exact >LinkedIn</router-link>
+    <router-link class="select-option" to="/google" tag="div" active-class="active" exact>Google
+    </router-link>
+    <router-link class="select-option" to="/facebook" tag="div" active-class="active" exact>
+      Facebook
+    </router-link>
+    <router-link class="select-option" to="/paypal" tag="div" active-class="active" exact>Paypal
+    </router-link>
+    <router-link class="select-option" to="/firebase" tag="div" active-class="active" exact>
+      Firebase
+    </router-link>
+    <router-link class="select-option" to="/linkedin" tag="div" active-class="active" exact>
+      LinkedIn
+    </router-link>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'SelectionPanel'
-  }
+export default {
+  name: 'SelectionPanel',
+};
 </script>
 
 <style scoped>

@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Paypal',
-  }
+export default {
+  name: 'Paypal',
+};
 </script>
 
 <style scoped>

@@ -19,9 +19,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Facebook',
-  }
+export default {
+  name: 'Facebook',
+};
 </script>
 
 <style scoped>

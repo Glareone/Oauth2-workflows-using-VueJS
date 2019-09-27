@@ -11,15 +11,15 @@
 </template>
 
 <script>
-  import Header from './page-components/Header.vue';
-  import Logging from './components/Logging.vue';
+import Header from './page-components/Header.vue';
+import Logging from './components/Logging.vue';
 
-  export default {
-    components: {
-      appHeader: Header,
-      appLogging: Logging,
-    },
-  }
+export default {
+  components: {
+    appHeader: Header,
+    appLogging: Logging,
+  },
+};
 </script>
 
 <style lang="scss">

@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'FirebaseOAuthInformation'
-  }
+export default {
+  name: 'FirebaseOAuthInformation',
+};
 </script>
 
 <style scoped>

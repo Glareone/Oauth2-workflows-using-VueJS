@@ -3,9 +3,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'LinkedInOAuthInformation'
-  }
+export default {
+  name: 'LinkedInOAuthInformation',
+};
 </script>
 
 <style scoped>
