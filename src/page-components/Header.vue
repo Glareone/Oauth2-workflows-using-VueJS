@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  export default {
-    name: 'Header'
-  }
+export default {
+  name: 'Header',
+};
 </script>
 
-<style>
+<style scoped>
   .application-header {
     grid-column: 1 / -1;
     grid-row: page-start / form-start;
