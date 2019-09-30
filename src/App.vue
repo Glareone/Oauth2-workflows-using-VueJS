@@ -23,6 +23,11 @@ export default {
 </script>
 
 <style lang="scss">
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
   :root {
     --grid-gap: 1rem;
     --padding: 1.5rem;
@@ -48,6 +53,7 @@ export default {
     display: grid;
     grid-template-columns: minmax(min-content, 90%);
     justify-content: center;
+    min-height: 100vh;
   }
 
   .page {

@@ -2,8 +2,10 @@
   <div class="form-panel">
     <h4>Google Credentials:</h4>
     <div class="form-panel">
+      <p>Step 1: Get Code from google via clicking on 'Sign in with Google' button</p>
       <button @click="signInRedirect">Sign in with Google</button>
       <br>
+      <p>Step 2: Get Token</p>
       <button @click="getToken">Get Token</button>
     </div>
   </div>
