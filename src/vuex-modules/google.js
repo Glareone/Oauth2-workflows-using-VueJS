@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 const state = {
   code: null,
@@ -27,8 +28,11 @@ const mutations = {
 };
 
 const actions = {
-  getCode({ commit }, url) {
+  async getToken({ commit }, url) {
+    debugger;
+    const { data } = await axios.post(url);
     console.log(`get code action raised ${url}`);
+    debugger;
   },
   setCode({ commit }, code) {
     commit('setCode', code);
