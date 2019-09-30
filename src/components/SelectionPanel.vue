@@ -1,11 +1,13 @@
 <template>
   <div class="selection__container">
-    <router-link class="select-option" to="/google" tag="div" active-class="active" exact>Google
+    <router-link class="select-option" to="/google" tag="div" active-class="active" exact>
+      Google
     </router-link>
     <router-link class="select-option" to="/facebook" tag="div" active-class="active" exact>
       Facebook
     </router-link>
-    <router-link class="select-option" to="/paypal" tag="div" active-class="active" exact>Paypal
+    <router-link class="select-option" to="/paypal" tag="div" active-class="active" exact>
+      Paypal
     </router-link>
     <router-link class="select-option" to="/firebase" tag="div" active-class="active" exact>
       Firebase
