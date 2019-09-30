@@ -1,11 +1,11 @@
 import SelectionPanel from './components/SelectionPanel.vue';
 import InformationBlock from './components/InformationBlock.vue';
 
-const GoogleForm = () => import(/* webpackChunkName: "user" */'./components/oauth-forms/Google.vue');
-const FirebaseForm = () => import(/* webpackChunkName: "user" */'./components/oauth-forms/Firebase.vue');
-const FacebookForm = () => import(/* webpackChunkName: "user" */'./components/oauth-forms/Facebook.vue');
-const LinkedInForm = () => import(/* webpackChunkName: "user" */'./components/oauth-forms/LinkedIn.vue');
-const PaypalForm = () => import(/* webpackChunkName: "user" */'./components/oauth-forms/Paypal.vue');
+const GoogleForm = () => import(/* webpackChunkName: "form" */'./components/oauth-forms/Google.vue');
+const FirebaseForm = () => import(/* webpackChunkName: "form" */'./components/oauth-forms/Firebase.vue');
+const FacebookForm = () => import(/* webpackChunkName: "form" */'./components/oauth-forms/Facebook.vue');
+const LinkedInForm = () => import(/* webpackChunkName: "form" */'./components/oauth-forms/LinkedIn.vue');
+const PaypalForm = () => import(/* webpackChunkName: "form" */'./components/oauth-forms/Paypal.vue');
 
 const routes = [
   {

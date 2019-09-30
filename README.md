@@ -240,7 +240,7 @@ clientSecret =
 ---
 * Authorization Endpoint (Browser):
 
-https://accounts.google.com/o/oauth2/auth?redirect...URLENCODE(redirectURI)&response_type=code&client_id=clientId&scope=https%3A%2F%2Fmail.google.com%2F&approval_prompt=force
+https://accounts.google.com/o/oauth2/auth?redirect_uri=URLENCODE(redirectURI)&response_type=code&client_id=clientId&scope=https%3A%2F%2Fmail.google.com%2F&approval_prompt=force
 
 * What you need:
 

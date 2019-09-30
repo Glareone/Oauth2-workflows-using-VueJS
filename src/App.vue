@@ -34,6 +34,8 @@ export default {
     --main-element-color: #cdcdc0;
     --secondary-color: #DDBC95;
     --tertiary-color: #B38867;
+
+    word-break: break-all;
   }
 
   #app {
