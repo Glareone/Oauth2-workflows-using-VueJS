@@ -8,11 +8,13 @@
         <br>
       </div>
       <div v-else>
-        <p><b>You have already earned Code!</b></p>
+        <p><b>You have already earned Code! See in Info Block</b></p>
       </div>
       <p><b>Step 2</b>: Get Token.</p>
       <button @click="getToken" v-if="!token">Get Token</button>
-      <p v-if="token"><b>You've finally get token. You could start use it in your app!</b></p>
+      <p v-if="token">
+        <b>You've finally get token! See in Info Block</b>
+      </p>
     </div>
   </div>
 </template>

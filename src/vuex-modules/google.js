@@ -4,18 +4,15 @@ import { GOOGLE_TOKEN_DATA, GOOGLE_TOKEN_ENDPOINT } from '../constants';
 const state = {
   googleCode: null,
   googleToken: null,
-  information: 'This is a code grant type. You have to get CODE first, then using CODE you could get token',
+  googleRefreshToken: null,
 };
 
 const getters = {
-  code(state) {
+  googleCode(state) {
     return state.googleCode;
   },
-  token(state) {
+  googleToken(state) {
     return state.googleToken;
-  },
-  information(state) {
-    return state.information;
   },
 };
 
@@ -33,7 +30,7 @@ const actions = {
     try {
       const requestData = GOOGLE_TOKEN_DATA.replace('=CODE', `=${state.googleCode}`);
       // eslint-disable-next-line
-      const { data: { access_token } } = await axios.post(
+      const response = await axios.post(
         GOOGLE_TOKEN_ENDPOINT, requestData,
         {
           headers: {
@@ -41,7 +38,8 @@ const actions = {
           },
         },
       );
-
+      const { data: { access_token }} = response;
+      debugger;
       commit('setToken', access_token);
     } catch (error) {
       console.log(error);

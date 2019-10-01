@@ -10,6 +10,9 @@ export const GOOGLE_AUTHORIZATION_ENDPOINT_PROTOTYPE = `${GOOGLE_BASE_URL}/auth?
 export const GOOGLE_AUTHORIZATION_ENDPOINT = `${GOOGLE_BASE_URL}/auth?redirect_uri=${GOOGLE_REDIRECT_ENCODE_URI}&response_type=code&client_id=${GOOGLE_CLIENT_ID}&scope=https%3A%2F%2Fmail.google.com%2F&approval_prompt=force`;
 
 // For /token endpoint (to get token)
-export const GOOGLE_TOKEN_ENDPOINT_PROTOTYPE = `${GOOGLE_BASE_URL}/token&grant_type=authorization_code&code=CODE&redirect_uri=URLENCODE(redirectURI)&client_id=CLIENDID&client_secret=clientSecret`;
+export const GOOGLE_TOKEN_ENDPOINT_PROTOTYPE = `${GOOGLE_BASE_URL}/token + body: &grant_type=authorization_code&code=CODE&redirect_uri=URLENCODE(redirectURI)&client_id=CLIENDID&client_secret=clientSecret&approval_prompt=force`;
 export const GOOGLE_TOKEN_ENDPOINT = `${GOOGLE_BASE_URL}/token`;
-export const GOOGLE_TOKEN_DATA = `&grant_type=authorization_code&code=CODE&redirect_uri=${GOOGLE_REDIRECT_ENCODE_URI}&client_id=${GOOGLE_CLIENT_ID}&client_secret=${GOOGLE_CLIENT_SECRET}`;
+
+// access_type=offline to get refresh token too.
+// https://stackoverflow.com/questions/8942340/get-refresh-token-google-api
+export const GOOGLE_TOKEN_DATA = `&grant_type=authorization_code&code=CODE&redirect_uri=${GOOGLE_REDIRECT_ENCODE_URI}&client_id=${GOOGLE_CLIENT_ID}&client_secret=${GOOGLE_CLIENT_SECRET}&access_type=offline&approval_prompt=force&prompt=consent`;

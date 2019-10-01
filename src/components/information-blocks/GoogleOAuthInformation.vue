@@ -30,10 +30,10 @@ export default {
   },
   computed: {
     token() {
-      return this.$store.getters.token;
+      return this.$store.getters.googleToken;
     },
     code() {
-      return this.$store.getters.code;
+      return this.$store.getters.googleCode;
     },
   },
 };
