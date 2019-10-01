@@ -11,4 +11,5 @@ export const GOOGLE_AUTHORIZATION_ENDPOINT = `${GOOGLE_BASE_URL}/auth?redirect_u
 
 // For /token endpoint (to get token)
 export const GOOGLE_TOKEN_ENDPOINT_PROTOTYPE = `${GOOGLE_BASE_URL}/token&grant_type=authorization_code&code=CODE&redirect_uri=URLENCODE(redirectURI)&client_id=CLIENDID&client_secret=clientSecret`;
-export const GOOGLE_TOKEN_ENDPOINT = `${GOOGLE_BASE_URL}/token&grant_type=authorization_code&code=CODE&redirect_uri=${GOOGLE_REDIRECT_ENCODE_URI}&client_id=${GOOGLE_CLIENT_ID}&client_secret=${GOOGLE_CLIENT_SECRET}`;
+export const GOOGLE_TOKEN_ENDPOINT = `${GOOGLE_BASE_URL}/token`;
+export const GOOGLE_TOKEN_DATA = `&grant_type=authorization_code&code=CODE&redirect_uri=${GOOGLE_REDIRECT_ENCODE_URI}&client_id=${GOOGLE_CLIENT_ID}&client_secret=${GOOGLE_CLIENT_SECRET}`;

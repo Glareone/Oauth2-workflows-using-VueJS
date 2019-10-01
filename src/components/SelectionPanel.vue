@@ -33,7 +33,6 @@ export default {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     grid-gap: 1.5rem;
-    grid-auto-rows: 40px;
   }
 
   .select-option {
