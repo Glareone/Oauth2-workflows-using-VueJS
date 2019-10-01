@@ -8,6 +8,7 @@
     <p><b>Complete Example</b>: {{ GOOGLE_AUTHORIZATION_ENDPOINT }} </p>
     <p><b>2.</b> Get Token. To Get Token you must send your code to https://accounts.google.com/o/oauth2/token endpoint</p>
     <p><b>Prototype Example:</b> {{ GOOGLE_TOKEN_ENDPOINT_PROTOTYPE }}</p>
+    <p>More info: <a href="https://developers.google.com/oauthplayground">Google playground</a></p>
   </div>
 </template>
 
@@ -29,10 +30,10 @@ export default {
   },
   computed: {
     token() {
-      return this.$store.getters.token;
+      return this.$store.getters.googleToken;
     },
     code() {
-      return this.$store.getters.code;
+      return this.$store.getters.googleCode;
     },
   },
 };

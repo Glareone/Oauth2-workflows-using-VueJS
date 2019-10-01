@@ -15,7 +15,7 @@ export default {
 <style scoped>
   .application-header {
     grid-column: 1 / -1;
-    grid-row: page-start / form-start;
+    grid-row: page-start / select-panel-start;
     text-decoration: underline;
     text-align: center;
   }

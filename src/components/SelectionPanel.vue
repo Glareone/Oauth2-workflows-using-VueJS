@@ -31,7 +31,7 @@ export default {
     padding: var(--padding);
 
     display: grid;
-    grid-template-columns: repeat(5, minmax(min-content, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
     grid-gap: 1.5rem;
   }
 
