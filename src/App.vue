@@ -64,9 +64,9 @@ export default {
 
     grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--grid-gap);
-    grid-template-rows: [page-start] minmax(max-content, 10vh)
-      [select-panel-start] minmax(max-content, 10vh)
-      [form-start] minmax(max-content, 20vh)
+    grid-template-rows: [page-start] max-content
+      [select-panel-start] minmax(10vh, min-content)
+      [form-start] minmax(20vh, min-content)
       [logging-start] minmax(20vh, 1fr)
       [page-end];
   }

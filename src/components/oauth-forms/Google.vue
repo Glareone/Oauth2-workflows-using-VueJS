@@ -7,7 +7,9 @@
         <button @click="signInRedirect" >Sign in with Google</button>
         <br>
       </div>
-      <div v-else><p>You have already earned Code!</p></div>
+      <div v-else>
+        <p>You have already earned Code!</p>
+      </div>
       <p>Step 2: Get Token</p>
       <button @click="getToken">Get Token</button>
     </div>
