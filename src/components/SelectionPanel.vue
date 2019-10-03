@@ -40,7 +40,7 @@ export default {
 
     cursor: pointer;
 
-    border: 1px solid darkgrey;
+    border: 1px solid var(--border-color);
     border-radius: var(--border-button-radius);
 
     padding: 10px;
