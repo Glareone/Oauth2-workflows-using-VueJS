@@ -18,7 +18,7 @@ export default {
   background-color: var(--main-element-color);
   padding: 1rem;
   border-radius: var(--block-radius);
-  border: 1px solid darkgrey;
+  border: 1px solid var(--border-color);
   -webkit-box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
   -moz-box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
   box-shadow: 3px 2px 6px 0 var(--box-shadow-color);

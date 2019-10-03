@@ -21,6 +21,7 @@
 
 <script>
 import { GOOGLE_AUTHORIZATION_ENDPOINT } from '../../constants';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'Google',
@@ -33,11 +34,11 @@ export default {
     },
   },
   methods: {
+    ...mapActions({
+      getToken: 'getGoogleToken',
+    }),
     signInRedirect() {
       window.location = GOOGLE_AUTHORIZATION_ENDPOINT;
-    },
-    getToken() {
-      this.$store.dispatch('getGoogleToken');
     },
   },
   beforeCreate() {

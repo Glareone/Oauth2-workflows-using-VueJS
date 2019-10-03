@@ -39,6 +39,8 @@ export default {
     --main-element-color: #cdcdc0;
     --secondary-color: #DDBC95;
     --tertiary-color: #B38867;
+    --text-color: #2c3e50;
+    --border-color: darkgrey;
 
     word-break: break-all;
   }
@@ -47,7 +49,7 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
+    color: var(--text-color);
     background-color: var(--main-color);
 
     display: grid;
@@ -77,7 +79,7 @@ export default {
     grid-row: form-start / logging-start;
     padding: 1rem;
     border-radius: var(--block-radius);
-    border: 1px solid darkgrey;
+    border: 1px solid var(--border-color);
     -webkit-box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
     -moz-box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
     box-shadow: 3px 2px 6px 0 var(--box-shadow-color);

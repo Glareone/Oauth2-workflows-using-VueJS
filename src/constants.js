@@ -16,3 +16,7 @@ export const GOOGLE_TOKEN_ENDPOINT = `${GOOGLE_BASE_URL}/token`;
 // access_type=offline to get refresh token too.
 // https://stackoverflow.com/questions/8942340/get-refresh-token-google-api
 export const GOOGLE_TOKEN_DATA = `&grant_type=authorization_code&code=CODE&redirect_uri=${GOOGLE_REDIRECT_ENCODE_URI}&client_id=${GOOGLE_CLIENT_ID}&client_secret=${GOOGLE_CLIENT_SECRET}&access_type=offline&approval_prompt=force&prompt=consent`;
+
+//-------------------------------------------------- FIREBASE --------------------------------------
+export const FIREBASE_KEY = 'AIzaSyCOMzxMfs0gbqbsG6lq5BBawxrvaq457HI';
+export const FIREBASE_AUTHORIZATION_ENDPOINT = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_KEY}`;
