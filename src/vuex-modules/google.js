@@ -39,7 +39,6 @@ const actions = {
         },
       );
       const { data: { access_token }} = response;
-      debugger;
       commit('SET_GOOGLE_TOKEN', access_token);
     } catch (error) {
       console.log(error);

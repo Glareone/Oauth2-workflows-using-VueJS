@@ -32,7 +32,6 @@ const actions = {
       commit('SET_FIREBASE_TOKEN', idToken);
       commit('SET_FIREBASE_LOCALID', localId);
     } catch(error) {
-      debugger;
       console.log(error);
     }
 
