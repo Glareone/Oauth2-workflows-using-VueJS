@@ -37,7 +37,7 @@ export default {
       window.location = GOOGLE_AUTHORIZATION_ENDPOINT;
     },
     getToken() {
-      this.$store.dispatch('getToken');
+      this.$store.dispatch('getGoogleToken');
     },
   },
   beforeCreate() {

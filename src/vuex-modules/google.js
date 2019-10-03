@@ -17,16 +17,16 @@ const getters = {
 };
 
 const mutations = {
-  setCode(state, payload) {
+  'SET_GOOGLE_CODE'(state, payload) {
     state.googleCode = payload;
   },
-  setToken(state, payload) {
+  'SET_GOOGLE_TOKEN'(state, payload) {
     state.googleToken = payload;
   },
 };
 
 const actions = {
-  async getToken({ commit, state }) {
+  async getGoogleToken({ commit, state }) {
     try {
       const requestData = GOOGLE_TOKEN_DATA.replace('=CODE', `=${state.googleCode}`);
       // eslint-disable-next-line
@@ -40,13 +40,13 @@ const actions = {
       );
       const { data: { access_token }} = response;
       debugger;
-      commit('setToken', access_token);
+      commit('SET_GOOGLE_TOKEN', access_token);
     } catch (error) {
       console.log(error);
     }
   },
   setCode({ commit }, code) {
-    commit('setCode', code);
+    commit('SET_GOOGLE_CODE', code);
   },
 };
 
