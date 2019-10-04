@@ -21,6 +21,7 @@
 
 <script>
 import { mapActions } from 'vuex';
+import { FACEBOOK_AUTHORIZATION_ENDPOINT } from '../../constants';
 
 export default {
   name: 'Facebook',
@@ -33,15 +34,23 @@ export default {
     },
   },
   methods: {
-    ...mapActions({ getToken: 'getFacebookToken' }),
+    ...mapActions({ getFacebookToken: 'getFacebookToken' }),
     signInRedirect() {
+      window.location = FACEBOOK_AUTHORIZATION_ENDPOINT;
     },
     getToken() {
       if (!this.code) {
         return;
       }
-      this.getToken();
+      this.getFacebookToken();
     },
+  },
+  beforeCreate() {
+    if (this.$route.query.code) {
+      this.$store.dispatch('setFacebookCode', this.$route.query.code);
+      // deleted all queries from route to make it clear and prevent misunderstanding from our users
+      this.$router.replace({ ...this.$router.currentRoute, query: {} });
+    }
   },
 };
 </script>
