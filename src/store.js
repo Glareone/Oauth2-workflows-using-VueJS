@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import google from './vuex-modules/google';
 import firebase from './vuex-modules/firebase';
 import facebook from './vuex-modules/facebook';
+import linkedin from './vuex-modules/linkedin';
 
 Vue.use(Vuex);
 
@@ -11,5 +12,6 @@ export default new Vuex.Store({
     google,
     firebase,
     facebook,
+    linkedin,
   },
 });
