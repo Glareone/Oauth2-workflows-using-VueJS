@@ -2,6 +2,7 @@
   <div class="form-panel">
     <h4>LinkedIn Credentials:</h4>
     <div class="form-panel">
+      <h4>Code Flow:</h4>
       <p><b>Step 1</b>: Get Code from LinkedIn via clicking on 'Sign in with LinkedIn' button.</p>
       <div v-if="!code">
         <button @click="signInRedirect">Sign in with LinkedIn</button>
@@ -15,11 +16,17 @@
       <p v-if="token">
         <b>You've finally get token! See in Info Block</b>
       </p>
+      <hr>
+      <h4>Client Credentials Flow:</h4>
+      <button>Get Token viw Client Credentials Flow</button>
     </div>
   </div>
 </template>
 
 <script>
+import { LINKEDIN_AUTHORIZATION_ENDPOINT } from '../../constants';
+import { mapActions } from 'vuex';
+
 export default {
   name: 'LinkedIn',
   computed: {
@@ -31,14 +38,15 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['getLinkedInToken']),
     signInRedirect() {
-      //window.location = FACEBOOK_AUTHORIZATION_ENDPOINT;
+      window.location = LINKEDIN_AUTHORIZATION_ENDPOINT;
     },
     getToken() {
       if (!this.code) {
         return;
       }
-      this.getFacebookToken();
+      this.getLinkedInToken();
     },
   },
   beforeCreate() {

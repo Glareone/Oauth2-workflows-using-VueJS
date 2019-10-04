@@ -32,3 +32,19 @@ export const FACEBOOK_AUTHORIZATION_ENDPOINT = `${FACEBOOK_BASE_URI}?client_id=$
 // token endpoint (to get token). "GET" request
 export const FACEBOOK_TOKEN_ENDPOINT_PROTOTYPE = `${FACEBOOK_GRAPH_BASE_URI}/${FACEBOOK_OAUTH_VERSION}/oauth/access_token?redirect_uri=URIENCODED(redirectURI)&client_id=CLIEND_ID&client_secret=CLIENT_SECRET&code=CODE`;
 export const FACEBOOK_TOKEN_ENDPOINT = `${FACEBOOK_GRAPH_BASE_URI}/${FACEBOOK_OAUTH_VERSION}/oauth/access_token?redirect_uri=${FACEBOOK_REDIRECT_URI_ENCODED}&client_id=${FACEBOOK_APP_ID}&client_secret=${FACEBOOK_APP_SECRET}&code=`;
+
+// ------------------------------------------------- LINKED IN -------------------------------------
+const LINKEDIN_CLIEND_ID = '78p5a1sgadk8cj';
+const LINKEDIN_CLIENT_SECRET = '8oxI5tMPZKglxl7m';
+const LINKEDIN_REDIRECT_URI = 'http://localhost:8080/linkedin';
+const LINKEDIN_REDIRECT_URI_ENCODED = encodeURI(LINKEDIN_REDIRECT_URI);
+// second version of api endpoint
+// legacy documentation and endpoint description: https://developer.linkedin.com/docs/oauth2-legacy
+// modern one: https://docs.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin/consumer/context
+export const LINKEDIN_BASE_URI = 'https://www.linkedin.com/oauth/v2';
+export const LINKEDIN_AUTHORIZATION_ENDPOINT = `${LINKEDIN_BASE_URI}/authorization?response_type=code&state=987654321&scope=r_basicprofile&client_id=${LINKEDIN_CLIEND_ID}&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}`;
+export const LINKEDIN_TOKEN_ENDPOINT = `${LINKEDIN_BASE_URI}/accessToken`;
+export const LINKEDIN_TOKEN_ENDPOINT_DATA = `grant_type=authorization_code&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}&client_id=${LINKEDIN_CLIEND_ID}&client_secret=${LINKEDIN_CLIENT_SECRET}&code=CODE`;
+
+// ------------------------------------------------- PAYPAL ----------------------------------------
+

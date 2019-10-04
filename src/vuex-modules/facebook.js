@@ -4,7 +4,6 @@ import { FACEBOOK_TOKEN_ENDPOINT } from '../constants';
 const state = {
   facebookCode: '',
   facebookToken: '',
-  facebookRefreshToken: '',
 };
 
 const getters = {
@@ -13,9 +12,6 @@ const getters = {
   },
   facebookToken(state) {
     return state.facebookToken;
-  },
-  facebookRefreshToken(state) {
-    return state.facebookRefreshToken;
   },
 };
 
@@ -26,9 +22,6 @@ const mutations = {
   'SET_FACEBOOK_TOKEN'(state, payload) {
     state.facebookToken = payload;
   },
-  'SET_FACEBOOK_REFRESH_TOKEN'(state, payload) {
-    state.facebookRefreshToken = payload;
-  },
 };
 
 const actions = {
@@ -37,6 +30,7 @@ const actions = {
   },
   async getFacebookToken({ commit, state }) {
     try {
+      // eslint-disable-next-line
       const { data: { access_token } } = await axios.get(`${FACEBOOK_TOKEN_ENDPOINT}${state.facebookCode}`);
       // this access_token is long-lived access token
       // https://developers.facebook.com/docs/facebook-login/access-tokens/refreshing/
@@ -44,7 +38,6 @@ const actions = {
     } catch (error) {
       console.log(error);
     }
-
   },
 };
 
