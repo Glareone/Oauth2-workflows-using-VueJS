@@ -37,12 +37,12 @@ export default {
     signInRedirect() {
     },
     getToken() {
-      if(!this.code) {
+      if (!this.code) {
         return;
       }
       this.getToken();
     },
-  }
+  },
 };
 </script>
 

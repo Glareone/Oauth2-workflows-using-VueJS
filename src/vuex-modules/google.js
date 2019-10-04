@@ -17,10 +17,10 @@ const getters = {
 };
 
 const mutations = {
-  'SET_GOOGLE_CODE'(state, payload) {
+  SET_GOOGLE_CODE(state, payload) {
     state.googleCode = payload;
   },
-  'SET_GOOGLE_TOKEN'(state, payload) {
+  SET_GOOGLE_TOKEN(state, payload) {
     state.googleToken = payload;
   },
 };
@@ -38,7 +38,8 @@ const actions = {
           },
         },
       );
-      const { data: { access_token }} = response;
+      // eslint-disable-next-line
+      const { data: { access_token } } = response;
       commit('SET_GOOGLE_TOKEN', access_token);
     } catch (error) {
       console.log(error);

@@ -41,7 +41,7 @@ export default {
       window.location = GOOGLE_AUTHORIZATION_ENDPOINT;
     },
     getToken() {
-      if(!this.code) {
+      if (!this.code) {
         return;
       }
       this.getGoogleToken();

@@ -37,16 +37,16 @@ export default {
   },
   name: 'Firebase',
   methods: {
-    ...mapActions({ signIn: 'firebaseSignIn'}),
+    ...mapActions({ signIn: 'firebaseSignIn' }),
     onSubmit() {
-      if(!this.email || !this.password ) {
+      if (!this.email || !this.password) {
         return;
       }
 
       const userData = { email: this.email, password: this.password };
       this.signIn(userData);
     },
-  }
+  },
 };
 </script>
 

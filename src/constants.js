@@ -1,4 +1,4 @@
-//------------------------------------------------- GOOGLE -----------------------------------------
+// ------------------------------------------------- GOOGLE ----------------------------------------
 const GOOGLE_CLIENT_ID = '141066975376-76ks9855blhuluf98m027rr94o6eqn0r.apps.googleusercontent.com';
 const GOOGLE_CLIENT_SECRET = '1YDYWnM5VilJcu-UOWYzLNgO';
 const GOOGLE_REDIRECT_URI = 'http://localhost:8080/google';
@@ -14,11 +14,11 @@ export const GOOGLE_TOKEN_ENDPOINT = `${GOOGLE_BASE_URL}/token`;
 // https://stackoverflow.com/questions/8942340/get-refresh-token-google-api
 export const GOOGLE_TOKEN_DATA = `&grant_type=authorization_code&code=CODE&redirect_uri=${GOOGLE_REDIRECT_ENCODED_URI}&client_id=${GOOGLE_CLIENT_ID}&client_secret=${GOOGLE_CLIENT_SECRET}&access_type=offline&approval_prompt=force&prompt=consent`;
 
-//-------------------------------------------------- FIREBASE --------------------------------------
+// -------------------------------------------------- FIREBASE -------------------------------------
 export const FIREBASE_KEY = 'AIzaSyCOMzxMfs0gbqbsG6lq5BBawxrvaq457HI';
 export const FIREBASE_AUTHORIZATION_ENDPOINT = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_KEY}`;
 
-//-------------------------------------------------- FACEBOOK --------------------------------------
+// -------------------------------------------------- FACEBOOK -------------------------------------
 const FACEBOOK_APP_ID = '2722392394458827';
 const FACEBOOK_APP_SECRET = '2beed2badc5f6c71b135755e051fd9f7';
 const FACEBOOK_REDIRECT_URI = 'http://localhost:8080/facebook/';

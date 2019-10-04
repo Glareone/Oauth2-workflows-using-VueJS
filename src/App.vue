@@ -90,19 +90,19 @@ export default {
       padding: 10px 20px;
       font: inherit;
       cursor: pointer;
-    }
 
-    button:hover,
-    button:active {
-      background-color: var(--secondary-color);
-    }
+      &:hover,
+      &:active {
+        background-color: var(--secondary-color);
+      }
 
-    button[class="disabled"],
-    button[class="disabled"]:hover,
-    button[class="disabled"]:active {
-      border: 1px solid var(--tertiary-color);
-      background-color: transparent;
-      cursor: not-allowed;
+      &[class="disabled"],
+      &[class="disabled"]:hover,
+      &[class="disabled"]:active {
+        border: 1px solid var(--tertiary-color);
+        background-color: transparent;
+        cursor: not-allowed;
+      }
     }
   }
 </style>

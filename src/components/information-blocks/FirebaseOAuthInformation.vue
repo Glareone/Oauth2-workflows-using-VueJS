@@ -13,11 +13,11 @@ export default {
   computed: {
     firebaseToken() {
       return this.$store.getters.firebaseToken;
-      },
+    },
     firebaseLocalId() {
       return this.$store.getters.firebaseLocalId;
     },
-  }
+  },
 };
 </script>
 
