@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .signin-form {
     color: var(--text-color);
     width: 400px;
@@ -59,47 +59,40 @@ export default {
 
   .input {
     margin: 10px auto;
-  }
 
-  .input label {
-    display: block;
-    color: #4e4e4e;
-    margin-bottom: 6px;
-  }
+    label {
+      display: block;
+      color: #4e4e4e;
+      margin-bottom: 6px;
+    }
 
-  .input input {
-    font: inherit;
-    width: 100%;
-    padding: 6px 12px;
-    box-sizing: border-box;
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-button-radius);
-  }
+    input {
+      font: inherit;
+      width: 100%;
+      padding: 6px 12px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-button-radius);
 
-  .input input:focus {
-    outline: none;
-    border: 1px solid var(--tertiary-color);
-    background-color: #eee;
+      &:focus {
+        outline: none;
+        border: 1px solid var(--tertiary-color);
+        background-color: #eee;
+      }
+    }
   }
 
   .submit button {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-button-radius);
-    padding: 10px 20px;
-    font: inherit;
-    cursor: pointer;
-  }
-
-  .submit button:hover,
-  .submit button:active {
-    background-color: var(--secondary-color);
-  }
-
-  .submit button[class="disabled"],
-  .submit button[class="disabled"]:hover,
-  .submit button[class="disabled"]:active {
-    border: 1px solid var(--tertiary-color);
-    background-color: transparent;
-    cursor: not-allowed;
+    &:hover,
+    &:active {
+      background-color: var(--secondary-color);
+    }
+    &[class="disabled"],
+    &[class="disabled"]:hover,
+    &[class="disabled"]:active {
+      border: 1px solid var(--tertiary-color);
+      background-color: transparent;
+      cursor: not-allowed;
+    }
   }
 </style>

@@ -44,7 +44,7 @@ const actions = {
       console.log(error);
     }
   },
-  setCode({ commit }, code) {
+  setGoogleCode({ commit }, code) {
     commit('SET_GOOGLE_CODE', code);
   },
 };

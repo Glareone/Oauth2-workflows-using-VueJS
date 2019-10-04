@@ -49,7 +49,7 @@ export default {
   },
   beforeCreate() {
     if (this.$route.query.code) {
-      this.$store.dispatch('setCode', this.$route.query.code);
+      this.$store.dispatch('setGoogleCode', this.$route.query.code);
       // deleted all queries from route to make it clear and prevent misunderstanding from our users
       this.$router.replace({ ...this.$router.currentRoute, query: {} });
     }
