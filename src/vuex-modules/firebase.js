@@ -25,18 +25,17 @@ const mutations = {
 };
 
 const actions = {
-  async firebaseSignIn({ commit, dispatch }, userData) {
+  async firebaseSignIn({ commit }, userData) {
     try {
       const authData = { ...userData, returnSecureToken: true };
-      const { data: { idToken, localId } } = await axios.post(FIREBASE_AUTHORIZATION_ENDPOINT, authData);
+      const { data: { idToken, localId } } = await axios
+        .post(FIREBASE_AUTHORIZATION_ENDPOINT, authData);
       commit('SET_FIREBASE_TOKEN', idToken);
       commit('SET_FIREBASE_LOCALID', localId);
-    } catch(error) {
-      debugger;
+    } catch (error) {
       console.log(error);
     }
-
-  }
+  },
 };
 
 export default {

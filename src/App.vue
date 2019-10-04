@@ -83,6 +83,26 @@ export default {
     -webkit-box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
     -moz-box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
     box-shadow: 3px 2px 6px 0 var(--box-shadow-color);
-  }
 
+    button {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-button-radius);
+      padding: 10px 20px;
+      font: inherit;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        background-color: var(--secondary-color);
+      }
+
+      &[class="disabled"],
+      &[class="disabled"]:hover,
+      &[class="disabled"]:active {
+        border: 1px solid var(--tertiary-color);
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
 </style>
