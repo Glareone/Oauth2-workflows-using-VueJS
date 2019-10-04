@@ -18,7 +18,7 @@
       </p>
       <hr>
       <h4>Client Credentials Flow:</h4>
-      <button>Get Token viw Client Credentials Flow</button>
+      <button class="disabled">Get Token using Client Credentials Flow</button>
     </div>
   </div>
 </template>

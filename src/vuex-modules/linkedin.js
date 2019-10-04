@@ -33,10 +33,10 @@ const actions = {
   },
   async getLinkedInToken({ commit, state }) {
     try {
-      const requestData = LINKEDIN_TOKEN_ENDPOINT_DATA.replace('=CODE', `=${state.linkedInCode}`);
-      debugger;
+      const requestData = `${LINKEDIN_TOKEN_ENDPOINT_DATA}${state.linkedInCode}`;
       const response = await axios.post(`${LINKEDIN_TOKEN_ENDPOINT}`, requestData, {
         headers: {
+          'X-Requested-With': 'XMLHttpRequest',
           'Content-Type': 'application/x-www-form-urlencoded',
         },
       });

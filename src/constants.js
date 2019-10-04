@@ -42,9 +42,9 @@ const LINKEDIN_REDIRECT_URI_ENCODED = encodeURI(LINKEDIN_REDIRECT_URI);
 // legacy documentation and endpoint description: https://developer.linkedin.com/docs/oauth2-legacy
 // modern one: https://docs.microsoft.com/en-us/linkedin/shared/authentication/authorization-code-flow?context=linkedin/consumer/context
 export const LINKEDIN_BASE_URI = 'https://www.linkedin.com/oauth/v2';
-export const LINKEDIN_AUTHORIZATION_ENDPOINT = `${LINKEDIN_BASE_URI}/authorization?response_type=code&state=987654321&scope=r_basicprofile&client_id=${LINKEDIN_CLIEND_ID}&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}`;
+export const LINKEDIN_AUTHORIZATION_ENDPOINT = `${LINKEDIN_BASE_URI}/authorization?response_type=code&state=987654321&scope=r_liteprofile&client_id=${LINKEDIN_CLIEND_ID}&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}`;
 export const LINKEDIN_TOKEN_ENDPOINT = `${LINKEDIN_BASE_URI}/accessToken`;
-export const LINKEDIN_TOKEN_ENDPOINT_DATA = `grant_type=authorization_code&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}&client_id=${LINKEDIN_CLIEND_ID}&client_secret=${LINKEDIN_CLIENT_SECRET}&code=CODE`;
+export const LINKEDIN_TOKEN_ENDPOINT_DATA = `grant_type=authorization_code&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}&client_id=${LINKEDIN_CLIEND_ID}&client_secret=${LINKEDIN_CLIENT_SECRET}&code=`;
 
 // ------------------------------------------------- PAYPAL ----------------------------------------
 
