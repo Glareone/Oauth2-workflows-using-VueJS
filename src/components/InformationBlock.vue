@@ -1,7 +1,7 @@
 <template>
 
   <div class="info-block">
-    <h3>Information Block</h3>
+    <h3>Information Block:</h3>
     <!--
     use dynamic component.
     https://github.com/Glareone/VueJS-2-Portfolio/blob/master/lectures/lecture-block-9%20Slots%2C%20Dynamic%20Components%2C%20keep-alive%20%2B%20lifecycle%20hooks/src/App.vue
