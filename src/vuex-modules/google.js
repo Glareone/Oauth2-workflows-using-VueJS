@@ -17,10 +17,10 @@ const getters = {
 };
 
 const mutations = {
-  SET_GOOGLE_CODE(state, payload) {
+  'SET_GOOGLE_CODE'(state, payload) {
     state.googleCode = payload;
   },
-  SET_GOOGLE_TOKEN(state, payload) {
+  'SET_GOOGLE_TOKEN'(state, payload) {
     state.googleToken = payload;
   },
 };

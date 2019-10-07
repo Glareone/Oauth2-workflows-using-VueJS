@@ -1,5 +1,5 @@
 <template>
-  <div>Some Paypal Information....</div>
+  <div>In progress...</div>
 </template>
 
 <script>
