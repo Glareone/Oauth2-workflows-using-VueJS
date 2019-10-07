@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import { LINKEDIN_AUTHORIZATION_ENDPOINT } from '../../constants';
 import { mapActions } from 'vuex';
+import { LINKEDIN_AUTHORIZATION_ENDPOINT } from '../../constants';
 
 export default {
   name: 'LinkedIn',

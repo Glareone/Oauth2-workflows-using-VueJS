@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <div class="page">
-      <app-header />
-      <router-view />
-      <router-view name="route-form" />
-      <router-view name="route-information-block" />
-      <app-logging />
+      <app-header/>
+      <router-view/>
+      <transition name="fade" mode="out-in">
+        <router-view name="route-form" key="forms"/>
+      </transition>
+      <router-view name="route-information-block" key="info"/>
+      <app-logging/>
     </div>
   </div>
 </template>
@@ -33,7 +35,7 @@ export default {
     --padding: 1.5rem;
     --border-button-radius: 4rem;
     --block-radius: 1rem;
-    --box-shadow-color: rgba(153,153,153, .8);
+    --box-shadow-color: rgba(153, 153, 153, .8);
 
     --main-color: #626d71;
     --main-element-color: #cdcdc0;
@@ -66,11 +68,11 @@ export default {
 
     grid-template-columns: repeat(3, 1fr);
     grid-gap: var(--grid-gap);
-    grid-template-rows: [page-start] max-content
+    grid-template-rows:
+      [page-start] max-content
       [select-panel-start] minmax(10vh, min-content)
       [form-start] minmax(20vh, min-content)
-      [logging-start] minmax(20vh, 1fr)
-      [page-end];
+      [logging-start] minmax(20vh, 1fr) [page-end];
   }
 
   .form-panel {
@@ -104,5 +106,16 @@ export default {
         cursor: not-allowed;
       }
     }
+  }
+
+  /* FOR fade and slide transitions in a DOM (name) */
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: 0.5s;
   }
 </style>

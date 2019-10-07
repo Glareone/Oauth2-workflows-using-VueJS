@@ -1,6 +1,7 @@
 <template>
   <div class="logging">
     <h3>Logging:</h3>
+    <p>Unfortunately, Logging Page is abandoned.</p>
   </div>
 </template>
 

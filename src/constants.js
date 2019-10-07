@@ -47,4 +47,3 @@ export const LINKEDIN_TOKEN_ENDPOINT = `${LINKEDIN_BASE_URI}/accessToken`;
 export const LINKEDIN_TOKEN_ENDPOINT_DATA = `grant_type=authorization_code&redirect_uri=${LINKEDIN_REDIRECT_URI_ENCODED}&client_id=${LINKEDIN_CLIEND_ID}&client_secret=${LINKEDIN_CLIENT_SECRET}&code=`;
 
 // ------------------------------------------------- PAYPAL ----------------------------------------
-
