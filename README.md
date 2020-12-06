@@ -114,10 +114,10 @@ https://developers.facebook.com/
 
 What you need:
 
-appId = clientId =
-appSecret = clientSecret =
-redirectURI =
-URLENCODE(redirectURI) =
+**appId = clientId =**  - your client Id
+**appSecret = clientSecret =**  - your password
+**redirectURI** =  - url after getting token
+**URLENCODE(redirectURI)** =  - urlencoded string for your redirection
 
 
 your redirect URI needs to have a slash in the end!
@@ -265,7 +265,7 @@ curl -H "Authorization: Bearer access_token" "https://www.googleapis.com/gmail/v
 
 <details>
 
-<summary>OAuth worksheet for Paypal</summary>
+<summary>OAuth worksheet for Paypal:</summary>
 
 * Documentation:
 
@@ -575,7 +575,6 @@ cordova plugin add ionic-plugin-deeplinks --variable URL_SCHEME=myapp --variable
 
 * We’re almost ready to handle deeplinks, we just need to configure Universal Links on iOS and App Links on Android 6.0
 so our app can open when navigating to ionic-hats.com.
-
 
 ---
 * Configuring Universal Links (iOS) and App Links (Android)
