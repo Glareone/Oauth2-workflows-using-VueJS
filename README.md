@@ -9,29 +9,29 @@
 Steps:
 ![OAuth2-code-grant](readme-images/Code-Grant-Steps.png)
 
-1: Get "code" from /auth endpoint scheme:
+####1: Get "code" from /auth endpoint scheme:
 ![OAuth2-code-flow-1](readme-images/Code-flow-1.png)
-* "state" - part of application where we would like to move on.
-* "scope" - part of information which we would like to take from resource server.
-* "redirect_url" - http address where we will be redirected after the very last oauth response step by using HTTP 304 Redirect.
+* **"state"** - part of application where we would like to move on.
+* **"scope"** - part of information which we would like to take from resource server.
+* **"redirect_url"** - http address where we will be redirected after the very last oauth response step by using HTTP 304 Redirect.
 
-2: Get Token from /token endpoint scheme:
+####2: Get Token from /token endpoint scheme:
 ![OAuth2-code-flow-2](readme-images/Code-flow-2.png)
-* "czZCaGRSa3F0MzpnWDFm" is a string consists from "clientID" + ":" + "clientSecret" and base64 encoded.
+* **"czZCaGRSa3F0MzpnWDFm"** is a string consists from "clientID" + ":" + "clientSecret" and base64 encoded.
 * This is the CLIENT(3rd party app) credentials. They could be validated by Oauth server.
 To get clientID and Secret you need to register device first.
 
-2: Interactions with the Resource Server:
+####2: Interactions with the Resource Server:
 ![OAuth2-code-flow-3](readme-images/Code-flow-3.png)
 
-3: Get a new Access token:
+####3: Get a new Access token:
 ![OAuth2-code-flow-refresh-access-token](readme-images/Code-flow-Refresh-access-token.png)
 * We need to send a refresh token and get a new access token.
 Pay attention on refresh token in response - refresh token was also changed as well as access token.
 Next time we should send a new refresh token to get a new access token. Old refresh token - will be invalid.
 * grant_type should be "refresh_token"
 
-4: Get a new Refresh token:
+####4: Get a new Refresh token:
 ![OAuth2-code-flow-refresh-refresh-token](readme-images/Code-flow-Refresh-refresh-token.png)
 * To get a new refresh token (after unauthorized response trying to take a new access token) we need to send
 grant_type "refresh_token" and old token in "refresh_token" field. 
