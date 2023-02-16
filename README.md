@@ -1,3 +1,16 @@
+### OIDC (OpenId Connect) with OAuth
+* Simply saying OIDC is responsible for Authentication, OAuth is responsible for authorization.  
+* So, how they are related? Quite simple. OpenId Connect is built over OAuth paradigm and provide more options and more secure options as well.
+
+### Modern OAuth2 with Challenge (PKCE flow)
+* Instead of sending your clientId you send to Auth server your challenge code (for example, hash or currect time and your clientId)
+
+### SAML with OAuth. SAML vs OIDC
+* yes, it's feasible. Moreover, SAML could be more flexible solution with relayState rather than OIDC.
+* if you want to understand what combination works for you:
+  - in simple scenarios better to go with OIDC, it's modern approach.
+  - in complex systems and integrations (SSO, SalesForce, 3rd party services) - you need to carefully validate your decisions.
+
 ### OAuth2 Project with examples
 
 ![OAuth2-workflows](readme-images/Oauth2-workflows.png)
